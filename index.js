@@ -38,7 +38,7 @@ server.get('/api/zoos/:id', (req, res) => {
 server.post('/api/zoos', (req, res) => {
   db('zoos')
   .insert(req.body)
-  then(ids => {
+  .then(ids => {
     res.status(201).json(ids);
   })
   .catch(err => res.status(500).json(err));
